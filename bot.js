@@ -1,6 +1,6 @@
 import puppeteer from 'puppeteer';
 
-const chromeExecutablePath = "PATH TO CHROME EXECUTABLE"; //Potential Example: 'C:\\Users\\{username}\\Documents\\chrome\\win64-141.0.7390.54\\chrome-win64\\chrome.exe';
+const chromeExecutablePath = "PATH TO CHROME EXECUTABLE"; //Windows Example: 'C:\\Users\\{username}\\Documents\\chrome\\win64-141.0.7390.54\\chrome-win64\\chrome.exe';
 
 const convoTabs = new Map();
 const promptQueue = [];
@@ -12,7 +12,7 @@ async function initBrowser() {
     browser = await puppeteer.launch({
       executablePath: chromeExecutablePath,
       headless: false,
-      userDataDir: "PATH TO CHROME PROFILE ", //Potential Example: 'C:\\Users\\{username}\\AppData\\Local\\Google\\Chrome\\User Data\\Profile 1',
+      userDataDir: "PATH TO CHROME PROFILE ", //Windows Example: 'C:\\Users\\{username}\\AppData\\Local\\Google\\Chrome\\User Data\\Profile 1',
       defaultViewport: null,
     });
   }
@@ -100,4 +100,5 @@ export function sendPrompt(promptText, convoId) {
     promptQueue.push({ promptText, convoId, resolve });
     processQueue();
   });
+
 }
