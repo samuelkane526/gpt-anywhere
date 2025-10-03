@@ -1,0 +1,5 @@
+ToDo:
+  1. Security futures,
+  2. Smarter tab switching (predict the expected time for a response from a prompt, 
+  and time different conversations based on said calculations. This could massivelly improve effiency.)
+  3. Figure out a way to bypass bot detection while running headless. (Improve efficency of program and allow many more GPT instances to run on minimal hardware.)
