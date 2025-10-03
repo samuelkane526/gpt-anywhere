@@ -1,5 +1,3 @@
-Here’s a **comprehensive GitHub-style README** for your project, including setup instructions, dependencies, and links to resources like Chrome downloads and profile setup guides.
-
 ---
 
 # 🧠 GeminiAnywhereAPI
