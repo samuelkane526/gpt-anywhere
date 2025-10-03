@@ -25,7 +25,7 @@ A WebSocket-powered automation system that uses Puppeteer to interact with ChatG
 Install the required packages:
 
 ```bash
-npm install puppeteer puppeteer-extra puppeteer-extra-plugin-stealth ws
+npm install puppeteer
 ```
 
 ---
@@ -46,25 +46,15 @@ Use the official Chrome installer:
 
 👉 [Download Chrome](https://www.google.com/chrome/)[1](https://www.google.com/chrome/)
 
-Or get a portable version from TechSpot:
-
-👉 [TechSpot Chrome Portable](https://www.techspot.com/downloads/4718-google-chrome.html)[2](https://www.techspot.com/downloads/4718-google-chrome.html)
-
 ---
 
 ### 2. **Create a Chrome User Profile**
 
-Follow this guide to create a new Chrome profile:
-
-📺 [YouTube Tutorial – Create and Manage Chrome Profiles](https://www.youtube.com/watch?v=rmP6XQCwi5E)[3](https://www.youtube.com/watch?v=rmP6XQCwi5E)  
-📘 Google Help – Manage Chrome Profiles[4](https://support.google.com/chrome/answer/2364824?hl=en&co=GENIE.Platform%3DDesktop)
-
-Steps:
-- Open Chrome
-- Click your profile icon (top-right)
-- Select **Add**
-- Name the profile and choose an icon
-- Sign in with your Google account
+Launch from a blank chrome profile:
+  Windows: `Start-Process "C:\Users\{username}\Documents\chrome\win64-141.0.7390.54\chrome-win64\chrome.exe" -ArgumentList "--user-data-                                                   dir=`"C:\Users\{username}\AppData\Local\Google\Chrome\User Data\Profile 1`""`
+  Mac: `open -a "Google Chrome" --args --profile-directory="Profile 1"`
+  
+  Linux: `google-chrome --profile-directory="Profile 1"`
 
 ---
 
@@ -72,9 +62,7 @@ Steps:
 
 Make sure you're logged into [ChatGPT](https://chatgpt.com/auth/login) using the same Chrome profile.
 
-📺 [ChatGPT Login Tutorial](https://www.youtube.com/watch?v=WwckAwFVuko)[5](https://www.youtube.com/watch?v=WwckAwFVuko)
-
-> ⚠️ You must stay logged in for Puppeteer to access ChatGPT. This is handled by launching Chrome with your user profile directory.
+> ⚠️ You must stay logged in for Puppeteer in order for OpenAI to not flag you as a bot. This is handled by launching Chrome with your user profile directory.
 
 ---
 
@@ -141,24 +129,6 @@ To close a tab and remove its session:
 
 ---
 
-## 🛠️ Troubleshooting
-
-- **Headless mode issues?** Use `headless: 'new'` and stealth plugin.
-- **Selector not found?** Ensure you're logged into ChatGPT and using the correct profile.
-- **Auto-login problems?** Clear cookies or use incognito mode to reset login behavior.
-
----
-
-## 📂 File Structure
-
-```
-geminianywhereapi/
-├── bot.js          # Puppeteer logic
-├── ws.js           # WebSocket server
-├── package.json
-└── README.md       # This file
-```
-
 ---
 
 ## 📬 Contact & Contributions
@@ -166,5 +136,3 @@ geminianywhereapi/
 Feel free to open issues or pull requests to improve functionality, add features, or fix bugs.
 
 ---
-
-Would you like me to generate a `package.json` and `.gitignore` for this project too?
