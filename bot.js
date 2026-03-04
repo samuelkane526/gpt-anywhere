@@ -1,6 +1,11 @@
 import puppeteer from 'puppeteer';
 
-const chromeExecutablePath = "PATH TO CHROME EXECUTABLE"; //Windows Example: 'C:\\Users\\{username}\\Documents\\chrome\\win64-141.0.7390.54\\chrome-win64\\chrome.exe';
+const chromeExecutablePath = 'C:\Program Files\Google\Chrome\Application\chrome.exe'; 
+//Set to chrome.exe path on your system. 
+// Potential paths:
+// Windows: 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe'
+// Mac: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
+// Linux: '/usr/bin/google-chrome' or '/usr/bin/chromium-browser'
 
 const convoTabs = new Map();
 const promptQueue = [];
@@ -12,7 +17,11 @@ async function initBrowser() {
     browser = await puppeteer.launch({
       executablePath: chromeExecutablePath,
       headless: false,
-      userDataDir: "PATH TO CHROME PROFILE ", //Windows Example: 'C:\\Users\\{username}\\AppData\\Local\\Google\\Chrome\\User Data\\Profile 1',
+      userDataDir: 'SET PATH TO CHROME PROFILE', 
+      //Potnential paths:
+      // Windows: 'C:\\Users\\{USERNAME}\\AppData\\Local\\Google\\Chrome\\User Data\\{PROFILE NAME}'
+      // Mac: '/Users/{USERNAME}/Library/Application Support/Google/Chrome/{PROFILE NAME}'
+      // Linux: '/home/{USERNAME}/.config/google-chrome/{PROFILE NAME}'
       defaultViewport: null,
     });
   }
@@ -100,5 +109,4 @@ export function sendPrompt(promptText, convoId) {
     promptQueue.push({ promptText, convoId, resolve });
     processQueue();
   });
-
 }
