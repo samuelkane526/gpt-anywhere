@@ -48,11 +48,11 @@ Use the official Chrome installer:
 
 ### 2. **Create a Chrome User Profile**
 
-Launch from a blank chrome profile:
-  Windows: `Start-Process "C:\Users\{username}\Documents\chrome\win64-141.0.7390.54\chrome-win64\chrome.exe" -ArgumentList "--user-data-                                                   dir=`"C:\Users\{username}\AppData\Local\Google\Chrome\User Data\Profile 1`""`
-  Mac: `open -a "Google Chrome" --args --profile-directory="Profile 1"`
+Launch from a blank chrome profile using a Terminal:
+  Windows (Powershell): `Start-Process "C:\Users\{username}\Documents\chrome\win64-141.0.7390.54\chrome-win64\chrome.exe" -ArgumentList "--user-data-dir=`"C:\Users\{username}\AppData\Local\Google\Chrome\User Data\Profile 1`""`
+  Mac (Terminal): `open -a "Google Chrome" --args --profile-directory="Profile 1"`
   
-  Linux: `google-chrome --profile-directory="Profile 1"`
+  Linux (Shell): `google-chrome --profile-directory="Profile 1"`
 
 ---
 
